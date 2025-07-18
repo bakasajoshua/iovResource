@@ -17,19 +17,20 @@
              <ul id="admin" class="iq-submenu collapse show" data-parent="#iq-sidebar-toggle">
                 <li @if($active == 'sermon-categories') class="active" @endif><a href="{{ route('admin.sermons-category.index') }}"><i class="ri-function-line"></i>Sermon Categories</a></li>
                 <li @if($active == 'sermons') class="active" @endif><a href="{{ route('admin.sermons.index') }}"><i class="las la-house-damage"></i>Sermon</a></li>
-                <li @if($active == 'sermon-notes') class="active" @endif><a href="{{ route('admin.sermon-notes.index') }}"><i class="las la-user"></i>Notes</a></li>                
+                {{-- <li @if($active == 'sermon-notes') class="active" @endif><a href="{{ route('admin.sermon-notes.index') }}"><i class="las la-user"></i>Notes</a></li>--}}
              </ul>
           </li>
-          <li @if($active == 'publications') class="active" @endif>
+         {{--
+         <li @if($active == 'publications') class="active" @endif>
              <a href="{{ route('admin.publications.index') }}" class="iq-waves-effect"><i class="las la-calendar iq-arrow-left"></i><span>Publications</span></a>
-          </li>
-          <li @if($active == 'events') class="active" @endif>
+         </li>
+         <li @if($active == 'events') class="active" @endif>
             <a href="{{ route('admin.events.index') }}" class="iq-waves-effect"><i class="las la-calendar iq-arrow-left"></i><span>Events</span></a>
          </li>
          <li @if($active == 'users') class="active" @endif>
             <a href="{{ route('admin.users.index') }}" class="iq-waves-effect"><i class="las la-user-tie iq-arrow-left"></i><span>Users</span></a>
-         </li>
-          
+         </li>          
+         --}}
        </ul>
     </nav>
  </div>
