@@ -21,7 +21,7 @@ class SermonFactory extends Factory
     public function definition()
     {
         $type = ['audio', 'video'];
-        $audio = "http://127.0.0.1:8000/audio/nightfall-future-bass-music-228100.mp3";
+        $audio = env('APP_URL') . "audio/nightfall-future-bass-music-228100.mp3";
         $video = "https://www.youtube.com/watch?v=pS__ttyHIJw&list=RDpS__ttyHIJw&start_radio=1";
         $sermon_content = "";
 
@@ -39,7 +39,7 @@ class SermonFactory extends Factory
             'type' => $sermon_type,
             'sermon_content' =>  $sermon_content,
             'sermon_series_id'=>SermonSerie::get()->shuffle()->first()->id,
-            'cover_image' => "http://127.0.0.1:8000/img/bg-img/" . rand(1, 77). ".jpg",
+            'cover_image' => env('APP_URL') . "/img/bg-img/" . rand(1, 77). ".jpg",
             'uploaded_by' => User::get()->shuffle()->first()->id,
             'uploaded_at' => now(),
         ];
