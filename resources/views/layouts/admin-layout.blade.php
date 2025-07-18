@@ -290,7 +290,18 @@
                                     </div>
                                  </a>
                                  <div class="d-inline-block w-100 text-center p-3">
-                                    <a class="bg-primary iq-sign-btn" href="sign-in.html" role="button">Sign out<i class="ri-login-box-line ml-2"></i></a>
+                                    <form method="POST" action="{{ route('logout') }}">
+                                       @csrf
+
+                                       <a class="bg-primary iq-sign-btn" 
+                                          href="{{ route('logout') }}" 
+                                          role="button"
+                                          onclick="event.preventDefault();
+                                                this.closest('form').submit();">
+                                          Sign out<i class="ri-login-box-line ml-2"></i>
+                                       </a>
+                                    </form>
+                                    
                                  </div>
                               </div>
                            </div>
