@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Publication;
 use App\Models\Sermon;
 use App\Models\SermonCategory;
-use Illuminate\Http\Request;
-use App\Models\Publication;
 use App\Models\SermonNote;
+use App\Models\User;
+use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
@@ -18,6 +19,7 @@ class HomeController extends Controller
                         })->get();
         return view('iov_welcome', ['sermons' =>$sermons, 'featured_note' => $featured_note, 'sermonNotes' => $sermonNotes]);
     }
+
     public function sermons () {
         $categories = SermonCategory::get();
         // dd($categories);
@@ -47,6 +49,13 @@ class HomeController extends Controller
 
     public function dashboard(){
         $this->active = '';
-        return view('admin.admin-dashboard', ['active' => $this->active]);
+        $data = [
+            'active' => $this->active,
+            'sermons'   => Sermon::count(),
+            'publications' => Publication::count(),
+            'upcoming_events' => 0,
+            'users' => User::count(),
+        ];
+        return view('admin.admin-dashboard', $data);
     }
 }
