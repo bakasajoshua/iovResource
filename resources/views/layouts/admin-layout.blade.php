@@ -16,6 +16,7 @@
    <!-- Responsive CSS -->
    <link rel="stylesheet" href="{{ asset('admin-css/responsive.css') }}">
    <link rel="stylesheet" href="{{ asset('admin-css/fontawesome.css') }}">
+
    {{-- <link rel="stylesheet" href="{{ asset('admin-js/') }}"> --}}
 </head>
 <body>
@@ -33,7 +34,7 @@
             <a href="index.html" class="header-logo">
                <img src="admin-images/logo.png" class="img-fluid rounded-normal" alt="">
                <div class="logo-title">
-                  <span class="text-primary text-uppercase">Muzik</span> 
+                  <span class="text-primary text-uppercase">{{ config('app.short_name') }}</span> 
                </div>
             </a>
             <div class="iq-menu-bt-sidebar">
@@ -58,7 +59,7 @@
                      <a href="index.html" class="header-logo">
                         <img src="admin-images/logo.png" class="img-fluid rounded-normal" alt="">
                         <div class="pt-2 pl-2 logo-title">
-                           <span class="text-primary text-uppercase">Muzik</span>
+                           <span class="text-primary text-uppercase">{{ config('app.short_name') }}</span>
                         </div>
                      </a>
                   </div>
@@ -67,11 +68,13 @@
                   <i class="ri-menu-3-line"></i>
                </button>
                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  {{--
                   <ul class="list-unstyled iq-menu-top d-flex justify-content-between mb-0 p-0">
                      <li class="active"><a href="index.html">Home</a></li>
                      <li><a href="latest.html">Latest</a></li>
                      <li><a href="albums.html">Albums</a></li>
                   </ul>
+                  --}}
                   <ul class="navbar-nav ml-auto navbar-list">
                      <li class="nav-item nav-icon">
                         <div class="iq-search-bar">
@@ -300,39 +303,41 @@
       </div>
       <!-- TOP Nav Bar END -->
       <!-- Footer -->
-   <footer class="iq-footer">
-    <div class="container-fluid">
-       <div class="row">
-          <div class="col-sm-12">
-             <div class="player row">
-                <div class="details col-6 col-sm-4 col-md-4 col-lg-4">
-                   <div class="now-playing"></div>
-                   <div class="track-art"></div>
-                   <div>
-                      <div class="track-name">Pop Smoke </div>
-                      <div class="track-artist">Cascada</div>
-                   </div>
-                </div>
-                <div class="slider_container slider_music col-sm-5 col-md-4 col-lg-4">
-                   <div class="current-time">00:00</div>
-                   <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
-                   <div class="total-duration">00:00</div>
-                </div>
-                <div class="buttons col-6  col-sm-3 col-md-2  col-lg-2">
-                   <div class="prev-track" onclick="prevTrack()"><i class="fa fa-step-backward fa-2x"></i></div>
-                   <div class="playpause-track" onclick="playpauseTrack()"><i class="fa fa-play-circle fa-3x"></i></div>
-                   <div class="next-track" onclick="nextTrack()"><i class="fa fa-step-forward fa-2x"></i></div>
-                </div>
-                <div class="slider_container sound col-sm-6 col-md-2  col-lg-2">
-                   <i class="fa fa-volume-down"></i>
-                   <input type="range" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()">
-                   <i class="fa fa-volume-up"></i>
-                </div>
-             </div>
-          </div>
-       </div>
-    </div>
-   </footer>
+       {{--
+      <footer class="iq-footer">
+         <div class="container-fluid">
+            <div class="row">
+               <div class="col-sm-12">
+                  <div class="player row">
+                     <div class="details col-6 col-sm-4 col-md-4 col-lg-4">
+                        <div class="now-playing"></div>
+                        <div class="track-art"></div>
+                        <div>
+                           <div class="track-name">Pop Smoke </div>
+                           <div class="track-artist">Cascada</div>
+                        </div>
+                     </div>
+                     <div class="slider_container slider_music col-sm-5 col-md-4 col-lg-4">
+                        <div class="current-time">00:00</div>
+                        <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
+                        <div class="total-duration">00:00</div>
+                     </div>
+                     <div class="buttons col-6  col-sm-3 col-md-2  col-lg-2">
+                        <div class="prev-track" onclick="prevTrack()"><i class="fa fa-step-backward fa-2x"></i></div>
+                        <div class="playpause-track" onclick="playpauseTrack()"><i class="fa fa-play-circle fa-3x"></i></div>
+                        <div class="next-track" onclick="nextTrack()"><i class="fa fa-step-forward fa-2x"></i></div>
+                     </div>
+                     <div class="slider_container sound col-sm-6 col-md-2  col-lg-2">
+                        <i class="fa fa-volume-down"></i>
+                        <input type="range" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()">
+                        <i class="fa fa-volume-up"></i>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </footer>
+      --}}
    <!-- Footer END -->
    @yield('content')
    </div>

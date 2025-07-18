@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Sermon;
+use App\Models\SermonCategory;
 use Illuminate\Http\Request;
 
 class SermonsController extends Controller
@@ -13,7 +15,13 @@ class SermonsController extends Controller
      */
     public function index()
     {
-        //
+        $this->active = 'sermons';
+        $data = [
+            'active' => $this->active,
+            'sermons' => Sermon::all(),
+        ];
+
+        return view('sermon.index', $data);
     }
 
     /**

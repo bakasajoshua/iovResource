@@ -11,13 +11,13 @@
                   <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
                      <div class="iq-card-body">
                         <div class="d-flex align-items-center justify-content-between">
-                           <h6>Music Artist</h6>
+                           <h6>Total Sermons</h6>
                            <span class="iq-icon"><i class="ri-information-fill"></i></span>
                         </div>
                         <div class="iq-customer-box d-flex align-items-center justify-content-between mt-3">
                            <div class="iq-map text-primary font-size-32"><i class="ri-bar-chart-grouped-line"></i></div>
                            <div class="d-flex align-items-center">
-                              <h2>352</h2>
+                              <h2>{{ $sermons }}</h2>
                               <div class="rounded-circle iq-card-icon iq-bg-primary ml-3"> <i class="ri-inbox-fill"></i></div>
                            </div>
                         </div>
@@ -28,13 +28,13 @@
                   <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
                      <div class="iq-card-body">
                         <div class="d-flex align-items-center justify-content-between">
-                           <h6>Music Album</h6>
+                           <h6>Total Publications</h6>
                            <span class="iq-icon"><i class="ri-information-fill"></i></span>
                         </div>
                         <div class="iq-customer-box d-flex align-items-center justify-content-between mt-3">
                            <div class="iq-map text-success font-size-32"><i class="ri-bar-chart-grouped-line"></i></div>
                            <div class="d-flex align-items-center">
-                              <h2>987</h2>
+                              <h2>{{ $publications }}</h2>
                               <div class="rounded-circle iq-card-icon iq-bg-success ml-3"><i class="ri-price-tag-3-line"></i></div>
                            </div>
                         </div>
@@ -45,13 +45,13 @@
                   <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
                      <div class="iq-card-body">
                         <div class="d-flex align-items-center justify-content-between">
-                           <h6>Music Followers</h6>
+                           <h6>Upcoming Events</h6>
                            <span class="iq-icon"><i class="ri-information-fill"></i></span>
                         </div>
                         <div class="iq-customer-box d-flex align-items-center justify-content-between mt-3">
                            <div class="iq-map text-danger font-size-32"><i class="ri-bar-chart-grouped-line"></i></div>
                            <div class="d-flex align-items-center">
-                              <h2>2.5K</h2>
+                              <h2>{{ $upcoming_events }}</h2>
                               <div class="rounded-circle iq-card-icon iq-bg-danger ml-3"><i class="ri-radar-line"></i></div>
                            </div>
                         </div>
@@ -62,13 +62,13 @@
                   <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
                      <div class="iq-card-body">
                         <div class="d-flex align-items-center justify-content-between">
-                           <h6>Music Comments</h6>
+                           <h6>Users</h6>
                            <span class="iq-icon"><i class="ri-information-fill"></i></span>
                         </div>
                         <div class="iq-customer-box d-flex align-items-center justify-content-between mt-3">
                            <div class="iq-map text-info font-size-32"><i class="ri-bar-chart-grouped-line"></i></div>
                            <div class="d-flex align-items-center">
-                              <h2>5.2M</h2>
+                              <h2>{{ $users }}</h2>
                               <div class="rounded-circle iq-card-icon iq-bg-info ml-3"><i class="ri-refund-line"></i></div>
                            </div>
                         </div>
