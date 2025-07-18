@@ -102,7 +102,15 @@ class SermonsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $sermon = Sermon::findOrFail($id);
+        $this->active = 'sermons';
+        return view('sermon.create', [
+            'active' => $this->active,
+            'sermon' => $sermon,
+            'categories' => SermonCategory::all(),
+            'speakers' => Speaker::all(),
+            'allowedTypes' => Sermon::$allowedTypes,
+        ]);
     }
 
     /**
@@ -114,7 +122,40 @@ class SermonsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $sermon = Sermon::findOrFail($id);
+
+        // Validate the request data
+        $request->validate([
+            'category_id' => 'required|exists:sermon_categories,id',
+            'title' => 'required',
+            'speaker_id' => 'required|exists:speakers,id',
+            'type' => 'required|in:' . implode(',', Sermon::$allowedTypes),
+            'content' => 'required',
+            'cover_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        $sermon->title = $request->input('title');
+        $sermon->speaker_id = $request->input('speaker_id');
+        $sermon->sermon_category_id = $request->input('category_id');
+        $sermon->type = $request->input('type');
+        $sermon->sermon_content = $request->input('content');
+        $sermon->uploaded_by = auth()->id();
+        $sermon->uploaded_at = now();
+        $sermon->sermon_series_id = $request->input('sermon_series_id', null); // Optional field
+
+        // Handle file upload for cover image
+        if ($request->hasFile('cover_image')) {
+            $file = $request->file('cover_image');
+            $filename = time() . '.' . $file->getClientOriginalExtension();
+            $file->move(public_path('img/uploads/sermons/covers'), $filename);
+            // Save the filename to the sermon record
+            
+            $sermon->cover_image = config('app.url') . '/img/uploads/sermons/covers/' . $filename;
+        }
+        
+        $sermon->save();
+
+        return redirect()->route('admin.sermons.index')->with('success', 'Sermon Updated successfully.');
     }
 
     /**
@@ -125,6 +166,6 @@ class SermonsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        
     }
 }

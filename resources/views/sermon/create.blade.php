@@ -50,7 +50,7 @@
                         <select name="category_id" class="form-control" required>
                            <option value="">Select Category</option>
                            @foreach($categories as $category)
-                              <option value="{{ $category->id }}" {{ (old('category_id') ?? $sermon->category_id ?? '') == $category->id ? 'selected' : '' }}>{{ $category->name }}</option>
+                              <option value="{{ $category->id }}" {{ (old('category_id') ?? $sermon->sermon_category_id ?? '') == $category->id ? 'selected' : '' }}>{{ $category->name }}</option>
                            @endforeach
                         </select>
                     </div>
@@ -90,7 +90,7 @@
 
                     <div class="form-group">
                         <label>Sermon Content:</label>
-                        <textarea name="content" id="content" required class="form-control">{{ old('content') ?? $sermon->content ?? '' }}</textarea>
+                        <textarea name="content" id="content" required class="form-control">{{ old('content') ?? $sermon->sermon_content ?? '' }}</textarea>
                     </div>
 
                      <button type="submit" class="btn btn-primary">Submit</button>
