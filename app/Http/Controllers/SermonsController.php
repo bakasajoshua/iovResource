@@ -166,6 +166,24 @@ class SermonsController extends Controller
      */
     public function destroy($id)
     {
+        $sermon = Sermon::findOrFail($id);
+        // dd(basename($sermon->cover_image));
+        try {
+            // Delete all notes in the sermon
+            $sermon->sermonNotes()->delete();
+            // Delete the cover image if it exists
+            if ($sermon->cover_image) {
+                $coverImagePath = public_path('img/uploads/sermons/covers/' . basename($sermon->cover_image));
+                if (file_exists($coverImagePath)) {
+                    unlink($coverImagePath);
+                }
+            }
+            // Delete the sermon
+            $sermon->delete();     
+        } catch (\Throwable $th) {
+            throw $th;
+        }
         
+        return redirect()->route('admin.sermons.index');
     }
 }
