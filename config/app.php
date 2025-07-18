@@ -17,6 +17,8 @@ return [
 
     'name' => env('APP_NAME', 'Laravel'),
 
+    'short_name' => env('APP_SHORT_NAME', 'Laravel'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Environment
