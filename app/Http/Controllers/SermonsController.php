@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Sermon;
 use App\Models\SermonCategory;
+use App\Models\Speaker;
 use Illuminate\Http\Request;
 
 class SermonsController extends Controller
@@ -12,7 +13,7 @@ class SermonsController extends Controller
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
-     */
+     */    
     public function index()
     {
         $this->active = 'sermons';
@@ -31,7 +32,13 @@ class SermonsController extends Controller
      */
     public function create()
     {
-        //
+        $this->active = 'sermons';
+        return view ('sermon.create', [
+            'active' => $this->active,
+            'categories' => SermonCategory::all(),
+            'speakers' => Speaker::all(),
+            'allowedTypes' => Sermon::$allowedTypes,
+        ]);
     }
 
     /**
@@ -42,7 +49,38 @@ class SermonsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'category_id' => 'required|exists:sermon_categories,id',
+            'title' => 'required',
+            'speaker_id' => 'required|exists:speakers,id',
+            'type' => 'required|in:' . implode(',', Sermon::$allowedTypes),
+            'content' => 'required',
+            'cover_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        $sermon = new Sermon();
+        $sermon->title = $request->input('title');
+        $sermon->speaker_id = $request->input('speaker_id');
+        $sermon->sermon_category_id = $request->input('category_id');
+        $sermon->type = $request->input('type');
+        $sermon->sermon_content = $request->input('content');
+        $sermon->uploaded_by = auth()->id();
+        $sermon->uploaded_at = now();
+        $sermon->sermon_series_id = $request->input('sermon_series_id', null); // Optional field
+
+        // Handle file upload for cover image
+        if ($request->hasFile('cover_image')) {
+            $file = $request->file('cover_image');
+            $filename = time() . '.' . $file->getClientOriginalExtension();
+            $file->move(public_path('img/uploads/sermons/covers'), $filename);
+            // Save the filename to the sermon record
+            
+            $sermon->cover_image = config('app.url') . '/img/uploads/sermons/covers/' . $filename;
+            $sermon->save();
+        }
+
+        return redirect()->route('admin.sermons.index')->with('success', 'Sermon created successfully.');
+
     }
 
     /**

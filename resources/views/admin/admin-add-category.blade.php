@@ -5,7 +5,7 @@
 <div id="content-page" class="content-page">
    <div class="container-fluid">
       <div class="row">
-         @if($errors->has('email'))
+         @if($errors->has('name'))
             <div class="col-sm-12">
                <div class="iq-card">
                   <span class="error">{{ $errors->get('name') }}</span>

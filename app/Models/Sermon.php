@@ -13,6 +13,12 @@ class Sermon extends Model
         'id'
     ];
 
+    public static $allowedTypes = [
+        'audio',
+        'video',
+        'other'
+    ];
+
     public function sermonAuthor(){
         return $this->belongsTo(User::class, 'uploaded_by');
 

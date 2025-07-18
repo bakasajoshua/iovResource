@@ -15,8 +15,8 @@
                <i class="ri-arrow-right-s-line iq-arrow-right"></i>
             </a>
              <ul id="admin" class="iq-submenu collapse show" data-parent="#iq-sidebar-toggle">
+                <li @if($active == 'sermon-categories') class="active" @endif><a href="{{ route('admin.sermons-category.index') }}"><i class="ri-function-line"></i>Sermon Categories</a></li>
                 <li @if($active == 'sermons') class="active" @endif><a href="{{ route('admin.sermons.index') }}"><i class="las la-house-damage"></i>Sermon</a></li>
-                <li @if($active == 'sermon-categories') class="active" @endif><a href="{{ route('admin.sermons-category.index') }}"><i class="ri-function-line"></i>Categories</a></li>
                 <li @if($active == 'sermon-notes') class="active" @endif><a href="{{ route('admin.sermon-notes.index') }}"><i class="las la-user"></i>Notes</a></li>                
              </ul>
           </li>
