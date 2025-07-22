@@ -13,7 +13,11 @@ class EventsController extends Controller
      */
     public function index()
     {
-        //
+        $this->active = 'events';
+        return view('event.index', [
+            'active' => 'events',
+            'events' => \App\Models\Event::all(),
+        ]);
     }
 
     /**

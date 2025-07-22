@@ -23,10 +23,12 @@
          {{--
          <li @if($active == 'publications') class="active" @endif>
              <a href="{{ route('admin.publications.index') }}" class="iq-waves-effect"><i class="las la-calendar iq-arrow-left"></i><span>Publications</span></a>
-         </li>
+         </li>          
+         --}}
          <li @if($active == 'events') class="active" @endif>
             <a href="{{ route('admin.events.index') }}" class="iq-waves-effect"><i class="las la-calendar iq-arrow-left"></i><span>Events</span></a>
          </li>
+         {{--
          <li @if($active == 'users') class="active" @endif>
             <a href="{{ route('admin.users.index') }}" class="iq-waves-effect"><i class="las la-user-tie iq-arrow-left"></i><span>Users</span></a>
          </li>          
