@@ -189,7 +189,7 @@ a.text-primary:focus, a.text-primary:hover { color: var(--iq-hover) !important; 
 -----------------------------------------------------------------------*/
 #sign-in-page-box { background: var(--iq-white); border-radius: 10px; position: relative; width: 100%; min-height: 480px; height: 93vh; margin: 15px auto; box-shadow: 0px 4px 20px 0px rgba(44, 101, 144, 0.1); -webkit-box-shadow: 0px 4px 20px 0px rgba(44, 101, 144, 0.1); }
 .sign-in-detail { color: var(--iq-white); }
-.sign-in-page { height: 100vh; position: relative; background: url(../images/login/login.jpg)  no-repeat scroll 0 0; background-size: cover; }
+.sign-in-page { height: 100vh; position: relative; background: url(../admin-images/login/login.jpg)  no-repeat scroll 0 0; background-size: cover; }
 .sign-in-page .height-self-center { height: 100vh; border-radius: 15px; }
 .sign-in-page-data { border-radius: 15px; }
 .sign-in-detail { padding: 50px 80px; }
@@ -432,7 +432,7 @@ body.sidebar-main .content-page { margin-left: 80px; }
 .profile-header-image .profile-img { margin-top: -70px; position: relative; }
 .manufacture-block .iq-card-icon { border-radius: 15px 0 0 15px; }
 .iq-background-image, .background-image-overlap { position: relative; overflow: hidden; z-index: 9; }
-.iq-background-image.image-1::after { background: transparent url(../images/page-img/51.png) no-repeat scroll right bottom; }
+.iq-background-image.image-1::after { background: transparent url(../admin-images/page-img/51.png) no-repeat scroll right bottom; }
 
 /* ------------------ */
 .group-icon { margin-top: -70px; }
@@ -516,7 +516,7 @@ button.banner-button { position: absolute; left: auto; right: 21%; bottom: 12px;
 
 /*--------------------------------------
 ----------dashboard-1-------------------*/
-.iq-realeses-back { border-radius: 0px 30px; background: url(../images/dashboard/realease-song/realease-back.jpg) center center no-repeat; position: relative; background-size: cover; }
+.iq-realeses-back { border-radius: 0px 30px; background: url(../admin-images/dashboard/realease-song/realease-back.jpg) center center no-repeat; position: relative; background-size: cover; }
 .iq-realeses-back:after { border-radius: 0px 30px; position: absolute; content: ""; top: 0; left: auto; bottom: 0; right: 0; z-index: 0; width: 50%; background: linear-gradient(to right, rgba(83, 100, 141, 0) 0%, rgb(22 12 23) 44%); }
 ul.iq-song-slide li p { color: var(--iq-white); line-height: normal; }
 p.iq-music-title, .feature-list h6  { overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; }
@@ -604,7 +604,7 @@ i.fa-volume-down, i.fa-volume-up { padding: 10px; color: var(--iq-white); }
 i.fa-play-circle, i.fa-pause-circle, i.fa-step-forward, i.fa-step-backward { cursor: pointer; }
 
 /*-----------------------------------dashboard-3----------------------------------*/
-.iq-song-back { background: url(../images/dashboard/realease-song/realease-back.jpg) center center no-repeat; background-size: cover; position: relative; border-radius: 0px 30px; }
+.iq-song-back { background: url(../admin-images/dashboard/realease-song/realease-back.jpg) center center no-repeat; background-size: cover; position: relative; border-radius: 0px 30px; }
 .iq-song-back:after { position: absolute; content: ""; top: 0; left: 0; bottom: 0; right: 0; z-index: 0; background: #01041b; background: -moz-linear-gradient(top, #01041b 0%, #0a0d23 50%, #555766 100%); background: -webkit-linear-gradient(top, #01041b 0%, #0a0d23 50%, #555766 100%); background: linear-gradient(to bottom, #01041b 0%, #0a0d23 50%, #555766 100%); opacity: 0.9; border-radius: 0px 30px; }
 .iq-song-bottom { position: relative; z-index: 99; }
 .player1 { display: flex; align-items: center; justify-content: center; padding: 5px 0; position: relative; z-index: 1;}
@@ -887,7 +887,7 @@ Footer
 -----------------------------------------------------------------------*/
 
 /*body.sidebar-main .iq-footer { margin-left: 80px; }*/
-.bg-banner-image.style-three { height: 150px; background: url('../images/bg-03.jpg'); }
+.bg-banner-image.style-three { height: 150px; background: url('../admin-images/bg-03.jpg'); }
 .iq-mt--70 { margin-top: -70px }
 .banner-main-text { position: absolute; left: 15%; bottom: 13%; }
 .nav.nav-pills.style-three .nav-link.active:before, .nav.nav-pills.style-three .nav-link:hover:before { display: inline-block; width: 100%; height: 3px; background: var(--iq-primary); content: ""; position: absolute; left: 0; bottom: 0px; }
@@ -1085,7 +1085,7 @@ span.avatar-status { position: absolute; bottom: -10px; top: auto; left: auto; r
 .iq-chat-ui li:last-child a { border: none; }
 .iq-chat-ui li:nth-child(2) a, .iq-chat-ui li:nth-child(6) a { border: none; }
 .chat-sidebar-channel { overflow-y: scroll; overflow-x: hidden; height: calc(100vh - 19rem); margin-bottom: 15px; }
-.chat-data { background: url(../images/page-img/100.jpg) no-repeat scroll center center; background-size: cover; }
+.chat-data { background: url(../admin-images/page-img/100.jpg) no-repeat scroll center center; background-size: cover; }
 .chat-header-icons .dropdown-toggle:empty::after { display: none; }
 .chat-header-icons > a, .chat-header-icons > span { width: 40px; height: 40px; font-size: 20px; margin: 0 5px 0 0; color: var(--iq-primary); display: inline-block; text-align: center; line-height: 40px; border-radius: 15px; cursor: pointer; }
 .chat-content { position: relative; height: calc(100vh - 17rem); text-align: center; padding: 1.4rem; overflow-y: scroll; overflow-x: hidden; }
